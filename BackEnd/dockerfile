@@ -1,0 +1,23 @@
+# Use a imagem oficial do Node.js
+FROM node:16-alpine
+
+# Defina o diretório de trabalho dentro do container
+WORKDIR /usr/src/app
+
+# Copie o package.json e o package-lock.json para o container
+COPY package*.json ./
+
+# Instale as dependências do projeto
+RUN npm install
+
+# Copie o código do seu projeto para o container
+COPY . .
+
+# Compilar o TypeScript para JavaScript
+RUN npm run build
+
+# Expõe a porta configurada no seu app
+EXPOSE 8080
+
+# Comando para rodar o seu servidor (geralmente `npm run dev` ou o comando de start)
+CMD ["npm", "run", "dev"]
