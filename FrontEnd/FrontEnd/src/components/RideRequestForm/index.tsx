@@ -1,13 +1,22 @@
+import { FormButton, FormContainer, FormTitle, InputField } from "./style";
+
 export function RideRequestForm() {
+  const handleSubmit = () => {
+    alert("Solicitação de viagem estimada!");
+  };
+
   return (
-    <div>
-      <h2>Solicitação de Viagem</h2>
-      <form onSubmit={(e) => e.preventDefault()}>
-        <input type="text" placeholder="ID do Usuário" />
-        <input type="text" placeholder="Endereço de Origem" />
-        <input type="text" placeholder="Endereço de Destino" />
-        <button onClick={alert}>Estimar Viagem</button>
+    <FormContainer>
+      <FormTitle>Solicitação de Viagem</FormTitle>
+      <form
+        style={{ display: "flex", flexDirection: "column" }}
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <InputField type="text" placeholder="ID do Usuário" />
+        <InputField type="text" placeholder="Endereço de Origem" />
+        <InputField type="text" placeholder="Endereço de Destino" />
+        <FormButton onClick={handleSubmit}>Estimar Viagem</FormButton>
       </form>
-    </div>
+    </FormContainer>
   );
 }

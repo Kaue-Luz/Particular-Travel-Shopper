@@ -1,13 +1,27 @@
+import {
+  HistoryContainer,
+  HistoryList,
+  InputField,
+  LoadButton,
+  Title,
+} from "./styles";
+
 export function RideHistory() {
   return (
-    <div>
-      <h2>Histórico de Viagens</h2>
-      <input type="text" placeholder="ID do Usuário" />
-      <button onClick={alert}>Carregar Histórico</button>
-      <ul>
-        <li>viagem 1 ....</li>
-        <li>viagem 2 ....</li>
-      </ul>
-    </div>
+    <HistoryContainer>
+      <Title>Histórico de Viagens</Title>
+      <InputField type="text" placeholder="ID do Usuário" />
+      <LoadButton onClick={() => alert("Carregar Histórico")}>
+        Carregar Histórico
+      </LoadButton>
+      <HistoryList>
+        <li>
+          Viagem 1 - <span>Detalhes da viagem 1...</span>
+        </li>
+        <li>
+          Viagem 2 - <span>Detalhes da viagem 2...</span>
+        </li>
+      </HistoryList>
+    </HistoryContainer>
   );
 }

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const FormContainer = styled.div`
+export const HistoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
@@ -10,15 +12,13 @@ export const FormContainer = styled.div`
   color: #fff;
 `;
 
-export const FormTitle = styled.h2`
+export const Title = styled.h2`
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   color: #9c4cff;
-  text-align: center;
 `;
 
 export const InputField = styled.input`
-
   padding: 12px;
   margin-bottom: 1.5rem;
   background-color: #2c2c3e;
@@ -38,11 +38,11 @@ export const InputField = styled.input`
   }
 `;
 
-export const FormButton = styled.button`
-  padding: 12px;
-  margin-top: 16px;
+export const LoadButton = styled.button`
   width: 100%;
+  padding: 14px;
   background-color: #3a4e87;
+  color: white;
   border: none;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -55,5 +55,31 @@ export const FormButton = styled.button`
 
   &:active {
     transform: scale(0.98);
+  }
+`;
+
+export const HistoryList = styled.ul`
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 14px;
+    background-color: #2c2c3e;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #383b56;
+    }
+
+    span {
+      display: block;
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-top: 6px;
+    }
   }
 `;
